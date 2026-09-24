@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e741f078.css",
+    "main.js": "/static/js/main.45ffe04f.js",
+    "static/js/453.bafcbd23.chunk.js": "/static/js/453.bafcbd23.chunk.js",
+    "static/media/CBE.png": "/static/media/CBE.e99bd0892136a97119dc.png",
+    "static/media/Bank of Abyssinia.jpg": "/static/media/Bank of Abyssinia.b324629f0d09258f4948.jpg",
+    "static/media/Tele Birr.png": "/static/media/Tele Birr.24c4b4fab7e007795ba8.png",
+    "index.html": "/index.html",
+    "main.e741f078.css.map": "/static/css/main.e741f078.css.map",
+    "main.45ffe04f.js.map": "/static/js/main.45ffe04f.js.map",
+    "453.bafcbd23.chunk.js.map": "/static/js/453.bafcbd23.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e741f078.css",
+    "static/js/main.45ffe04f.js"
+  ]
+}

@@ -1,0 +1,213 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAuth Login Error - Parrot Advert</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.35);
+            overflow: hidden;
+            width: 100%;
+            max-width: 550px;
+            text-align: center;
+            padding: 50px 40px;
+            animation: fadeIn 0.6s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .error-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            background: #fff3cd;
+            color: #856404;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.6;
+            text-align: left;
+            border-left: 4px solid #ffc107;
+        }
+
+        .instructions {
+            text-align: left;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .instructions h3 {
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .instructions ol {
+            margin: 0;
+            padding-left: 20px;
+            color: #666;
+            line-height: 2;
+        }
+
+        .instructions code {
+            display: block;
+            background: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 12px;
+            word-break: break-all;
+        }
+
+        .setup-section {
+            background: #e8f4fd;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            text-align: left;
+        }
+
+        .setup-section h4 {
+            color: #2196F3;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .setup-section code {
+            font-size: 11px;
+            background: #fff;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+            box-shadow: 0 10px 30px rgba(108, 117, 125, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🦜</div>
+        
+        <div class="error-icon">⚠️</div>
+        
+        <h1>Third-Party Login Not Configured</h1>
+        
+        <div class="message">
+            <strong>OAuth Error:</strong> Social applications have not been configured in the database. 
+            You need to set up OAuth credentials to enable third-party login.
+        </div>
+        
+        <div class="instructions">
+            <h3>Quick Setup (Run in project root):</h3>
+            
+            <div class="setup-section">
+                <h4>Windows:</h4>
+                <code>setup_oauth.bat</code>
+            </div>
+            
+            <div class="setup-section">
+                <h4>Linux/Mac:</h4>
+                <code>chmod +x setup_oauth.sh && ./setup_oauth.sh</code>
+            </div>
+            
+            <div class="setup-section">
+                <h4>Manual Setup:</h4>
+                <code>python manage.py setup_social_apps --google-client-id "YOUR_CLIENT_ID" --google-secret "YOUR_SECRET"</code>
+            </div>
+            
+            <h3 style="margin-top: 20px;">To enable Google Login, you need to:</h3>
+            <ol>
+                <li>Go to <strong>Google Cloud Console</strong> → <strong>APIs & Services</strong> → <strong>Credentials</strong></li>
+                <li>Create <strong>OAuth 2.0 Client ID</strong> credentials</li>
+                <li>Enter your Google OAuth <strong>Client ID</strong> and <strong>Client Secret</strong></li>
+                <li>Add redirect URIs in authorized redirect URLs</li>
+            </ol>
+            
+            <strong>Required Redirect URLs in Google Cloud Console:</strong>
+            <code>
+                api/auth/google/login/callback/<br>
+                /auth/facebook/login/callback/
+            </code>
+        </div>
+        
+        <div>
+            <a href="/auth/login/" class="btn">Back to Login</a>
+            <a href="/" class="btn btn-secondary">Go to Home</a>
+        </div>
+</body>
+</html>

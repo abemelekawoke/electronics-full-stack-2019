@@ -1,0 +1,172 @@
+/* Global Styles for Electronics Store */
+
+:root {
+  /* Brand Palette */
+  --brand-blue: #0046be;      /* Strong Blue */
+  --brand-orange: #ff8f00;    /* Bright Orange */
+  --brand-black: #000000;     /* Pure Black */
+  --brand-white: #ffffff;     /* Pure White */
+  
+  /* Semantic Mappings */
+  --primary-color: var(--brand-blue);
+  --primary-dark: #00328a;
+  --primary-light: #336bdb;
+  
+  --secondary-color: var(--brand-orange);
+  --success-color: #2e7d32;
+  --warning-color: var(--brand-orange);
+  --danger-color: #d32f2f;
+  
+  --dark-color: var(--brand-black);
+  --light-color: #f4f4f4;
+  --gray-color: #757575;
+  
+  /* Gradients & Shadows */
+  --background-gradient: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-black) 100%);
+  --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --card-hover-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  
+  --border-radius: 8px; /* Slightly sharper for electronics feel */
+  --transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--brand-white);
+  color: var(--brand-black);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  color: var(--brand-black);
+}
+
+/* Custom Scrollbar using Brand Blue */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--brand-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--brand-blue);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-black);
+}
+
+/* Modern Card - Following Blue/White theme */
+.modern-card {
+  background: var(--brand-white);
+  border: 1px solid #eee;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.modern-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--card-hover-shadow);
+  border-color: var(--brand-blue);
+}
+
+/* Button Styles - Blue and Orange */
+.btn-modern {
+  padding: 12px 28px;
+  border-radius: 4px;
+  font-weight: 700;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-modern-primary {
+  background: var(--brand-blue);
+  color: var(--brand-white);
+}
+
+.btn-modern-primary:hover {
+  background: var(--brand-black);
+  transform: translateY(-2px);
+}
+
+.btn-modern-secondary {
+  background: var(--brand-orange);
+  color: var(--brand-white);
+}
+
+.btn-modern-outline {
+  background: transparent;
+  border: 2px solid var(--brand-blue);
+  color: var(--brand-blue);
+}
+
+/* Gradient Background using Blue/Black */
+.gradient-background {
+  background: var(--background-gradient);
+  color: white;
+}
+
+/* Form Styles */
+.form-control-modern {
+  padding: 14px 18px;
+  border-radius: 4px;
+  border: 2px solid #e0e0e0;
+  transition: var(--transition);
+}
+
+.form-control-modern:focus {
+  border-color: var(--brand-blue);
+  outline: none;
+}
+
+/* Price Highlight */
+.price-text {
+  color: var(--brand-orange);
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+/* Badge Styles */
+.badge-modern {
+  padding: 4px 12px;
+  background: var(--brand-black);
+  color: var(--brand-white);
+  font-weight: bold;
+  font-size: 0.7rem;
+}
+
+/* Loading Skeleton using Neutral Grays */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite linear;
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+/* Pattern specifically for your Blue/Orange brand */
+.bg-pattern {
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(0, 70, 190, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(255, 143, 0, 0.05) 0%, transparent 50%);
+}

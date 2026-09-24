@@ -1,0 +1,235 @@
+.partners-slider-wrapper {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    padding: 40px 0 50px 0;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 60px;
+}
+
+.partners-slider-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.partners-header-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.partners-title {
+    font-weight: 700;
+    color: #000;
+    font-size: 1.75rem;
+    letter-spacing: -0.5px;
+}
+
+.partners-subtitle {
+    color: #666;
+    font-weight: 400;
+}
+
+.partners-chip {
+    background: #000 !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+    padding: 6px 16px !important;
+}
+
+.partners-slider-container {
+    position: relative;
+    overflow: hidden;
+    padding: 0 50px;
+}
+
+.partners-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 16px;
+}
+
+.partner-slide {
+    padding: 8px;
+    min-width: 0;
+}
+
+.partner-card {
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 12px !important;
+    border: 2px solid transparent;
+    min-height: 140px;
+}
+
+.partner-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1) !important;
+    border-color: #1976D2;
+}
+
+.partner-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    gap: 8px;
+}
+
+.partner-logo-container {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #f5f5f5;
+    padding: 8px;
+}
+
+.partner-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.partner-logo-placeholder {
+    color: #999;
+}
+
+.partner-name {
+    font-weight: 600;
+    color: #000;
+    margin-top: 4px;
+    font-size: 0.9rem;
+    line-height: 1.2;
+}
+
+.partner-tier {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.tier-icon {
+    font-size: 1rem;
+}
+
+.tier-label {
+    font-weight: 600;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.slider-nav-btn {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background: #fff !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+    z-index: 10 !important;
+    width: 40px !important;
+    height: 40px !important;
+    transition: all 0.3s ease !important;
+}
+
+.slider-nav-btn:hover {
+    background: #1976D2 !important;
+    color: #fff !important;
+    transform: translateY(-50%) scale(1.1) !important;
+}
+
+.slider-nav-btn:disabled {
+    opacity: 0.3 !important;
+    cursor: not-allowed !important;
+}
+
+.prev-btn {
+    left: 0 !important;
+}
+
+.next-btn {
+    right: 0 !important;
+}
+
+.partners-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 25px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: #1976D2;
+    width: 24px;
+    border-radius: 4px;
+}
+
+.dot:hover {
+    background: #1976D2;
+}
+
+@media (max-width: 900px) {
+    .partners-slider-container {
+        padding: 0 40px;
+    }
+    
+    .partners-slider-wrapper {
+        padding: 30px 0 40px 0;
+    }
+    
+    .partners-title {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .partners-slider-container {
+        padding: 0 30px;
+    }
+    
+    .partners-slider-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .partner-card {
+        min-height: 100px;
+        padding: 15px;
+    }
+    
+    .partner-logo-container {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .slider-nav-btn {
+        width: 30px !important;
+        height: 30px !important;
+    }
+    
+    .partners-slider-wrapper {
+        padding: 20px 0 30px 0;
+        margin-top: 30px;
+    }
+}

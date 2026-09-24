@@ -1,0 +1,25 @@
+{% extends "allauth/layouts/base.html" %}
+{% load i18n %}
+
+{% block title %}Verification Required - Parrot Advert{% endblock %}
+
+{% block content %}
+<div style="text-align: center;">
+    <div style="font-size: 64px; margin-bottom: 20px;">🔒</div>
+    
+    <h2 style="color: #333; margin-bottom: 15px; font-size: 24px;">Account Verification Required</h2>
+    
+    <p class="message">
+        Unable to verify your Google account. Please ensure your Google account has a verified email address and try again.
+    </p>
+    
+    <a href="{% url 'account_login' %}" class="btn" style="margin-top: 20px; display: inline-block;">
+        Try Again
+    </a>
+    
+    <p style="margin-top: 30px;">
+        <a href="/" style="color: #667eea; text-decoration: none;">← Back to Home</a>
+    </p>
+</div>
+{% endblock %}
+

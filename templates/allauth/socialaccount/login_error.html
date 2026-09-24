@@ -1,0 +1,64 @@
+{% extends "allauth/layouts/base.html" %}
+{% load i18n %}
+
+{% block title %}Login Error - Parrot Advert{% endblock %}
+
+{% block content %}
+<div style="text-align: center;">
+    <div style="font-size: 64px; margin-bottom: 20px;">⚠️</div>
+    
+    <h2 style="color: #333; margin-bottom: 15px; font-size: 24px;">Third-Party Login Failure</h2>
+    
+    <p class="message error">
+        An error occurred while attempting to login via your third-party account.
+    </p>
+    
+    <div style="text-align: left; background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0;">
+        <p style="color: #666; margin-bottom: 15px; font-weight: 600;">This could be due to:</p>
+        <ul style="color: #666; line-height: 2; margin: 0; padding-left: 20px;">
+            <li><strong>OAuth Credentials Not Configured</strong> - Social applications are not set up in the database</li>
+            <li><strong>Google OAuth not configured</strong> - You need to set up Google OAuth credentials</li>
+            <li><strong>Redirect URL mismatch</strong> - The OAuth callback URL is not registered in Google Cloud Console</li>
+            <li><strong>Email permission not granted</strong> - Make sure to request email scope</li>
+            <li><strong>App not published</strong> - Google OAuth app might be in testing mode</li>
+        </ul>
+        
+        <p style="color: #666; margin-top: 15px; margin-bottom: 0;">
+            <strong>Quick Setup (Run in project root):</strong>
+        </p>
+        <div style="background: #fff; padding: 15px; border-radius: 5px; margin-top: 10px; font-size: 13px;">
+            <p style="margin-bottom: 10px; color: #333;"><strong>Windows:</strong></p>
+            <code style="display: block; background: #f5f5f5; padding: 10px; border-radius: 5px; margin-bottom: 15px; font-size: 12px;">
+setup_oauth.bat
+            </code>
+            
+            <p style="margin-bottom: 10px; color: #333;"><strong>Linux/Mac:</strong></p>
+            <code style="display: block; background: #f5f5f5; padding: 10px; border-radius: 5px; margin-bottom: 15px; font-size: 12px;">
+chmod +x setup_oauth.sh && ./setup_oauth.sh
+            </code>
+            
+            <p style="margin-bottom: 10px; color: #333;"><strong>Manual Setup:</strong></p>
+            <code style="display: block; background: #f5f5f5; padding: 10px; border-radius: 5px; margin-bottom: 10px; font-size: 12px;">
+python manage.py setup_social_apps --google-client-id "YOUR_CLIENT_ID" --google-secret "YOUR_SECRET"
+            </code>
+        </div>
+        
+        <p style="color: #666; margin-top: 15px; margin-bottom: 0;">
+            <strong>Redirect URLs to register in Google Cloud Console:</strong>
+        </p>
+        <code style="display: block; background: #fff; padding: 10px; border-radius: 5px; margin-top: 10px; font-size: 12px;">
+            http://localhost/api/auth/google/login/callback/<br>
+            http://localhost/api/auth/google/login/callback/
+        </code>
+    </div>
+    
+    <a href="{% url 'account_login' %}" class="btn" style="margin-top: 20px; display: inline-block;">
+        Try Again with Email
+    </a>
+    
+    <p style="margin-top: 30px;">
+        <a href="/" style="color: #667eea; text-decoration: none;">← Back to Home</a>
+    </p>
+</div>
+{% endblock %}
+
